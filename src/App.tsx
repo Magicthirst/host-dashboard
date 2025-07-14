@@ -8,7 +8,7 @@ import {DashboardScreen} from "./dashboard"
 import {AUTH_TOKEN_COOKIE, AUTH_UUID_COOKIE} from "./consts.ts";
 import {ApiImpl} from "./api/Api.ts";
 
-const api = new ApiImpl('http://localhost:8002')
+const api = new ApiImpl(import.meta.env.VITE_API_URL)
 
 function App() {
     const [page, setPage] = useState<Page>(pageOf(location.hash.slice(1)) ?? 'dashboard')
